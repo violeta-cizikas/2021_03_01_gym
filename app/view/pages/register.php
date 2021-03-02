@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="form-group">
-					<input name="phoneNumber" type="text" class="form-control <?php echo (!empty($data['phoneNumberdErr'])) ? 'is-invalid' : ''; ?>" placeholder="Fhone Number">
+					<input name="phoneNumber" type="text" class="form-control <?php echo (!empty($data['phoneNumberdErr'])) ? 'is-invalid' : ''; ?>" placeholder="Phone Number">
 					<span class='invalid-feedback'><?php echo $data['phoneNumberdErr'] ?></span>
 				</div>
 
