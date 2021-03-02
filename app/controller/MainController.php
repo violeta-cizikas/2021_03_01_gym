@@ -28,15 +28,77 @@ class MainController
 		require '../app/view/pages/' . $name;
 	}
 
+	//////////////////////////////////////////////////////////
+	// login logic 
 	public function login()
 	{
-		$this->view('login.php', []);
+		//////////////////////////////////////////////////////////
+		// check if logdin
+
+		if (isset($_SESSION['user'])) {
+			header("Location: " . URLROOT . "/");
+			return;
+		}
+
+		//////////////////////////////////////////////////////////
+		// Login in progress
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // create data 
+            $data = [
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
+
+                'emailErr' => '',
+                'passwordErr' => '',
+
+            ];
+
+            //////////////////////////////////////////////////////////
+            // Validation email
+            if (empty($data['email'])) {
+                $data['emailErr'] = "Please enter Your Email";
+              // filter_var($data['email'] - check email correct format 
+            } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                $data['emailErr'] = "Please enter a valid Email";
+              // if user with this email in DB exyst - error
+            } else if (!$this->userModel->findUserByEmail($data['email'])) {
+                $data['emailErr'] = "User does not exist";
+            } 
+
+            //////////////////////////////////////////////////////////
+            // Validation passwords
+            if (empty($data['password'])) {
+                $data['passwordErr'] = "Please enter Your Password";
+            }
+
+            // check if there are no validation errors
+            if (empty($data['emailErr']) && empty($data['passwordErr'])) {
+            	$user = $this->userModel->findUserByEmail($data['email']);
+                
+            	if (!password_verify($data['password'], $user['password'])) {
+            		$data['passwordErr'] = "Bad password";
+            	} else {
+            		// create session
+            		$_SESSION['user'] = $user;
+            		header("Location: " . URLROOT . "/");
+            		return;
+            	}
+            }
+        } else {
+        	$data = [];
+        }
+
+		$this->view('login.php', $data);
 	}
+
+	//////////////////////////////////////////////////////////
+	// register logic
 
 	public function register()
 	{
 		//////////////////////////////////////////////////////////
-		// echo 'Register in progress';
+		// Register in progress
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // create data 
@@ -86,13 +148,13 @@ class MainController
               // filter_var($data['email'] - check email correct format 
             } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $data['emailErr'] = "Please enter a valid Email";
-              // if user with this email in DB exysts - error
+              // if user with this email in DB exists - error
             } else if ($this->userModel->findUserByEmail($data['email'])) {
                 $data['emailErr'] = "Email already taken";
             }
 
             //////////////////////////////////////////////////////////
-            // Validate passwords
+            // Validation passwords
             if (empty($data['password'])) {
                 $data['passwordErr'] = "Please enter Your Password";
             } elseif (strlen($data['password']) < 4) {
@@ -128,6 +190,19 @@ class MainController
 	{
 		$this->view('reviews.php', []);
 	}
-	// logout ass no view (because according to the requirements in documentation _ redirects to home page)
-	public function logout() {}
+
+	//////////////////////////////////////////////////////////
+	// logout logic
+
+	// logout has no view (because according to the requirements in documentation _ redirects to home page)
+	public function logout() {
+		// check if logdin
+		if (isset($_SESSION['user'])) {
+			// $_SESSION['user'] delete
+			$_SESSION['user'] = null;
+			header("Location: " . URLROOT . "/");
+		} else {
+			header("Location: " . URLROOT . "/");
+		}
+	}
 }

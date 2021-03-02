@@ -7,7 +7,10 @@ error_reporting(E_ALL);
 require_once '../vendor/autoload.php';
 require_once '../app/configuration/configuration.php';
 
+
 use app\controller\MainController;
+
+session_start();
 
 $controller = new MainController();
 
