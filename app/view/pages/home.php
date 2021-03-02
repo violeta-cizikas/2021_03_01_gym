@@ -1,4 +1,3 @@
-<!-- footeryje uzdaromas html'as ir body -->
 <?php require APPROOT . '/view/includes/header.php';?>
 
 <div class="headerPhoto"></div>
@@ -37,4 +36,5 @@
 	</iframe>
 </div>
 
+<!-- footeryje has html & body clossing -->
 <?php require APPROOT . '/view/includes/footer.php';?>

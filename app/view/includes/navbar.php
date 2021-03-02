@@ -10,10 +10,10 @@
                 <a class="nav-link" href="<?php echo URLROOT ?>/">Home</a>           
                 <!-- when logedin -->
                 <?php if (isset($_SESSION['user'])) :?>                
-                    <a class="nav-link" href="<?php echo URLROOT ?>/reviews">Reviews</a>                    
+                    <a class="nav-link" href="<?php echo URLROOT ?>/reviews">Reviews</a>
                 <?php else: ?>
                 <!-- when not logedin -->            
-                    <a class="nav-link" href="<?php echo URLROOT ?>/reviews">Reviews</a>                    
+                    <a class="nav-link" href="<?php echo URLROOT ?>/reviews">Reviews</a>
                 <?php endif; ?>
             </div>
             <!-- bootstrap right side navigation -->

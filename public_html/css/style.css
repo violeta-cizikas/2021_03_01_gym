@@ -132,5 +132,18 @@
 	/*one line of text vertikal align*/
 	line-height: 70px;
 	border-top: 3px solid red;
+}
 
+/*////////////////////////////////////////////////////*/
+/*creating login, register, reviews*/
+
+.jumbotron {
+	margin-top: 2rem!important;
+}
+
+.reviewsTable {
+	width: 100%;
+	background: #fff;
+	border: 1px solid red;
+	margin-bottom: 2rem;
 }
