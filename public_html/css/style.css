@@ -1,0 +1,136 @@
+/*////////////////////////////////////////////////////*/
+/*header _ will be in all pages*/
+
+.header {	
+	width: 100%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;	
+
+}
+
+/*boostrap has verticaly aligned items*/
+.header .navbar {
+	height: 70px;
+	background: #1d228c;
+}
+
+/*////////////////////////////////////////////////////*/
+/*home page content*/
+
+/*header photo*/
+.headerPhoto {
+	height: 300px;
+	width: 100%;
+	background-color: #6b7cf6;
+    background-image: url(../images/headerPhotonext.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
+}
+
+/*mobile  header layout*/
+@media only screen and (max-width: 401px) {
+	.headerPhoto {
+		height: 150px;
+	}
+}
+
+/*services*/
+.servicesContainer {
+	width: 100%;
+	max-width: 800px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	background: #1d228c;
+	align-items: center;
+}
+
+.service {
+	width: 25%;
+	height: 250px;
+	background: red;
+	border: 1px solid grey;
+}
+
+.servicePhoto {
+	height: 40%;
+	background-color: #fff;	
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.servicePhotoOne {
+	background-image: url(../images/serviceOnePhoto.png);
+}
+
+.servicePhotoTwo {
+	background-image: url(../images/serviceTwoPhoto.png);
+}
+
+.servicePhotoThree {
+	background-image: url(../images/serviceThreePhoto.png);
+}
+
+.serviceText h2 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+.serviceText {
+	text-align: center;	
+	padding: 0 5px 0 5px;
+	font-size: 12px;
+}
+
+.serviceText p {
+	text-align: justify;
+}
+
+.serviceText h2, .serviceText {
+	color: #fff;
+} 
+
+/*mobile  service layout*/
+@media only screen and (max-width: 401px) {
+	.servicesContainer {
+		flex-direction: column;
+		padding-bottom: 20px;
+		height: auto;
+	}
+
+	.service {
+		margin-top: 20px;
+		width: 100%;
+	}
+}
+
+/*map*/
+.map iframe {
+	height: 300px;
+	width: 100%;
+	border-top: 3px solid red;
+}
+
+/*footer*/
+.footer {
+	height: 70px;
+	width: 100%;
+	background: #1d228c;
+	color: #fff;
+	text-align: center;
+	/*one line of text vertikal align*/
+	line-height: 70px;
+	border-top: 3px solid red;
+
+}
