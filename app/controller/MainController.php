@@ -118,7 +118,7 @@ class MainController
 				'passwordErr' => '',
 				'phoneNumberErr' => '',
 				'homeAdressErr' => '',
-				'page' => 'register'
+				'page' => 'register',
 			];
 
 			//////////////////////////////////////////////////////////
@@ -190,7 +190,7 @@ class MainController
 	//////////////////////////////////////////////////////////
 	// feedback logic
 	public function feedback()
-	}
+	{
 		//////////////////////////////////////////////////////////
 		// Reviews in progress
 		 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
