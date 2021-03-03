@@ -6,6 +6,7 @@ namespace app\model;
  * OOP
  * UserModel model, use for conect to DB
  */
+
 class UserModel {
 
 	// class properties
@@ -40,7 +41,7 @@ class UserModel {
 	public function findUserByEmail($email){
 		$sql = "SELECT * FROM users WHERE `email` = :email";
 		$pdo_statement = $this->dbh->prepare($sql);
-    	$pdo_statement->bindValue(':email', $email, \PDO::PARAM_STR);
+		$pdo_statement->bindValue(':email', $email, \PDO::PARAM_STR);
 		$pdo_statement->execute();
 		return $pdo_statement->fetch(\PDO::FETCH_ASSOC);
 	}
@@ -48,16 +49,16 @@ class UserModel {
 	//////////////////////////////////////////////////////////
 	// register new user
 	public function register($data)
-    {
+	{
 
-        // exemple :abcabc - will be replaced with real value
-        $sql = "INSERT INTO users (`firstname`,  `lastname`, `email`, `password`, `phone_number`, `home_adress`) VALUES (:firstname, :lastname, :email, :password, :phoneNumber, :homeAdress)";
+		// exemple :abcabc - will be replaced with real value
+		$sql = "INSERT INTO users (`firstname`,  `lastname`, `email`, `password`, `phone_number`, `home_adress`) VALUES (:firstname, :lastname, :email, :password, :phoneNumber, :homeAdress)";
 
-        // with PDO prepare  for sql statment executing
-        $pdo_statement = $this->dbh->prepare($sql);
+		// with PDO prepare  for sql statment executing
+		$pdo_statement = $this->dbh->prepare($sql);
 
-        // add values
-        $pdo_statement->bindValue(':firstname', $data['firstname'], \PDO::PARAM_STR);
+		// add values
+		$pdo_statement->bindValue(':firstname', $data['firstname'], \PDO::PARAM_STR);
 		$pdo_statement->bindValue(':lastname', $data['lastname'], \PDO::PARAM_STR);	
 		$pdo_statement->bindValue(':email', $data['email'], \PDO::PARAM_STR);
 		$pdo_statement->bindValue(':password', $data['password'], \PDO::PARAM_STR);
@@ -66,5 +67,5 @@ class UserModel {
 
 		// sql execution
 		$pdo_statement->execute();
-    }
+	}
 }

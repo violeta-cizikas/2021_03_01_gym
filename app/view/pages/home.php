@@ -32,9 +32,9 @@
 	<iframe
 		loading="lazy"
 		allowfullscreen
-		src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCUs003B6I0-Fc7OMoe_DeZ-Wt670TQ0ec&q=Sauletekio+Al+5, Vilnius">
+		src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCUs003B6I0-Fc7OMoe_DeZ-Wt670TQ0ec&q=Sauletekio+Al+15, Vilnius">
 	</iframe>
 </div>
 
-<!-- footeryje has html & body clossing -->
+<!-- footer has html & body clossing -->
 <?php require APPROOT . '/view/includes/footer.php';?>

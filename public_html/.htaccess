@@ -1,10 +1,10 @@
 #2
 
 <IfModule mod_rewrite.c>
-  Options -Multiviews
-  RewriteEngine On
-  RewriteBase /2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/public_html
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+	Options -Multiviews
+	RewriteEngine On
+	RewriteBase /2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/public_html
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
 </IfModule>

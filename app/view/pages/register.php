@@ -41,4 +41,5 @@
 	</div>
 </div>
 
+<!-- footer has html & body clossing -->
 <?php require APPROOT . '/view/includes/footer.php';?>

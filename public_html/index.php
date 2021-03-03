@@ -16,15 +16,14 @@ $controller = new MainController();
 
 /////////////////////////////////////////////
 // call different method based on browser URL
-
 $path = $_SERVER['REQUEST_URI'] ?? '/';
 
 if ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/login') {
 	$controller->login();
 } elseif ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/register') {
 	$controller->register();
-} elseif ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/reviews') {
-	$controller->reviews();
+} elseif ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/feedback') {
+	$controller->feedback();
 } elseif ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/logout') {
 	$controller->logout();
 } else {
