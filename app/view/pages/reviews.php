@@ -17,11 +17,11 @@
 
 			<tbody id="tableBody">
 				<?php foreach ($data['reviews'] as $value): ?>
-				<tr>
-					<td><?php echo $value['user_name']?></td>
-					<td><?php echo $value['review']?></td>
-					<td><?php echo $value['date']?></td>
-				</tr>
+					<tr>
+						<td><?php echo $value['user_name']?></td>
+						<td><?php echo $value['review']?></td>
+						<td><?php echo $value['date']?></td>
+					</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>

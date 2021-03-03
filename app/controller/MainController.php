@@ -190,9 +190,7 @@ class MainController
 	//////////////////////////////////////////////////////////
 	// feedback logic
 	public function feedback()
-	{
-		
-
+	}
 		//////////////////////////////////////////////////////////
 		// Reviews in progress
 		 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
