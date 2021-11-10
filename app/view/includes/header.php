@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css" >
 
-	<title>2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS</title>
+	<title>2021_03_01_gym</title>
 </head>
 
 <!-- open body -->

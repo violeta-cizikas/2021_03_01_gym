@@ -18,13 +18,13 @@ $controller = new MainController();
 // call different method based on browser URL
 $path = $_SERVER['REQUEST_URI'] ?? '/';
 
-if ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/login') {
+if ($path == '/2021_03_01_gym/login') {
 	$controller->login();
-} elseif ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/register') {
+} elseif ($path == '/2021_03_01_gym/register') {
 	$controller->register();
-} elseif ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/feedback') {
+} elseif ($path == '/2021_03_01_gym/feedback') {
 	$controller->feedback();
-} elseif ($path == '/2021_03_01_PRAKTINIO_DARBO_EGZAMINO_ATSISKAITYMAS_SPORTO_KLUBAS/logout') {
+} elseif ($path == '/2021_03_01_gym/logout') {
 	$controller->logout();
 } else {
 	$controller->home();
