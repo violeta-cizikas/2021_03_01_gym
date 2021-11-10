@@ -3,7 +3,6 @@
 
 .header {	
 	width: 100%;
-	/*max-width: 800px;*/
 	margin-left: auto;
 	margin-right: auto;	
 
@@ -41,7 +40,6 @@
 /*services*/
 .servicesContainer {
 	width: 100%;
-	/*max-width: 800px;*/
 	height: 400px;
 	margin-left: auto;
 	margin-right: auto;
@@ -130,6 +128,10 @@
 	text-align: center;
 	/*one line of text vertikal align*/
 	line-height: 70px;
+}
+
+.footer p {
+	margin-bottom: 0;
 }
 
 /*////////////////////////////////////////////////////*/
